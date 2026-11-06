@@ -1,0 +1,24 @@
+# PiZZa 프로젝트 전용 arduino-cli 설정
+#
+# 사용법:  arduino-cli --config-file ./arduino-cli.yaml <command>
+#          (tools/*.sh 스크립트는 이 파일을 자동으로 사용합니다)
+#
+# 설계 의도:
+#   - directories.data  : 전역 그대로 유지 → 이미 설치된 pizza 코어/툴체인(약 200MB)
+#                         과 esp32/teensy/rp2040 환경을 재다운로드 없이 공유
+#   - directories.user  : 이 프로젝트로 분리 → 스케치/라이브러리가 여기에만 쌓임
+board_manager:
+  additional_urls:
+    - https://raw.githubusercontent.com/jetpax/PiZZa/main/apps/Arduino/package_pizza_index.json
+
+directories:
+  data: /Users/paraco/Library/Arduino15
+  downloads: /Users/paraco/Library/Arduino15/staging
+  user: /Users/paraco/Projects/PiZZa/sketches
+
+build_cache:
+  path: /Users/paraco/Projects/PiZZa/build/.cache
+
+logging:
+  level: info
+  format: text

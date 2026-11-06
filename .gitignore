@@ -1,0 +1,22 @@
+# upstream 참조 클론 — 재클론 가능하므로 추적하지 않음 (tools/setup.sh 가 복원)
+upstream/
+
+# 빌드 산출물
+build/
+
+# 릴리스 이미지 (수백 MB)
+images/*.img
+images/*.img.xz
+images/*.zip
+
+# Wi-Fi 자격증명 — arduino_secrets.h.example 만 추적한다
+sketches/*/arduino_secrets.h
+
+# macOS
+.DS_Store
+
+# rk3566 (Radxa ZERO 3E · Zephyr 포팅) 은 자체 저장소다 — 중첩을 피한다
+rk3566/
+
+# Claude Code 작업 공간 (워크트리 포함, 수 GB)
+.claude/
